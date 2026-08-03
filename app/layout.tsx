@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
 import { ClerkProvider } from "@clerk/nextjs";
+=======
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
 import "./globals.css";
 
 const deployedHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
@@ -24,10 +27,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
+<<<<<<< HEAD
     <ClerkProvider>
       <html lang="en">
         <body>{children}</body>
       </html>
     </ClerkProvider>
+=======
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
   );
 }

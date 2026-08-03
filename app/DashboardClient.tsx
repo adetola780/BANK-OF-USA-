@@ -1,6 +1,9 @@
 "use client";
 
+<<<<<<< HEAD
 import { useClerk } from "@clerk/nextjs";
+=======
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
 import { FormEvent, useMemo, useState } from "react";
 
 type View = "overview" | "activity" | "documents" | "support" | "notifications" | "profile" | "security";
@@ -156,10 +159,20 @@ function Brand({ compact = false }: { compact?: boolean }) {
 
 export default function DashboardClient({
   viewer,
+<<<<<<< HEAD
 }: {
   viewer: AuthenticatedViewer | null;
 }) {
   const { signOut } = useClerk();
+=======
+  signInPath,
+  signOutPath,
+}: {
+  viewer: AuthenticatedViewer | null;
+  signInPath: string;
+  signOutPath: string;
+}) {
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
   const [view, setView] = useState<View>("overview");
   const [balanceVisible, setBalanceVisible] = useState(true);
   const [chatOpen, setChatOpen] = useState(false);
@@ -315,7 +328,18 @@ export default function DashboardClient({
               </div>
               <p className="login-note">Sign in through the protected OpenAI access screen. Your Google password is never shared with this prototype.</p>
 
+<<<<<<< HEAD
               <p className="auth-provider-note">Return to the home page to sign in with a verified email address.</p>
+=======
+              <a className="primary-button login-button auth-button" href={signInPath}>
+                Continue with ChatGPT <span>→</span>
+              </a>
+
+              <div className="auth-provider-note">
+                <span className="google-mark" aria-hidden="true">G</span>
+                <span><b>Want to use Gmail?</b><small>Choose “Continue with Google” on the next screen.</small></span>
+              </div>
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
             </div>
             <p className="legal-note">Non-operational prototype. No real accounts, funds, transfers, or credentials.</p>
           </div>
@@ -371,7 +395,11 @@ export default function DashboardClient({
             <div className="header-actions">
               <span className="secure-label"><i /> Signed in as {viewer.email}</span>
               <button className="icon-button" aria-label="Notifications" onClick={() => switchView("notifications")}>♢{unreadCount > 0 && <b>{unreadCount}</b>}</button>
+<<<<<<< HEAD
               <button className="outline-button signout-link" onClick={() => signOut({ redirectUrl: "/" })}>Sign out</button>
+=======
+              <a className="outline-button signout-link" href={signOutPath}>Sign out</a>
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
             </div>
           </header>
 
@@ -408,7 +436,11 @@ export default function DashboardClient({
               darkMode={darkMode}
               setDarkMode={setDarkMode}
               onToast={showToast}
+<<<<<<< HEAD
               onSignOutAll={() => signOut({ redirectUrl: "/" })}
+=======
+              onSignOutAll={() => window.location.assign(signOutPath)}
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
             />
           )}
         </div>
@@ -929,7 +961,11 @@ function Security({
         </div>
       </div>
       <div className="session-card">
+<<<<<<< HEAD
         <div className="section-title-row"><div><p className="eyebrow">Active sessions</p><h3>Recent login activity</h3></div><button className="outline-button" onClick={onSignOutAll}>Sign out</button></div>
+=======
+        <div className="section-title-row"><div><p className="eyebrow">Active sessions</p><h3>Recent login activity</h3></div><button className="outline-button" onClick={onSignOutAll}>Sign out all devices</button></div>
+>>>>>>> 7cf868ea9fa66e786b2b39814e2a3fe2a7401656
         <div className="session-row"><span className="device-icon">▣</span><div><b>Windows desktop</b><small>Current preview session • Chrome-compatible browser</small></div><time>Active now</time></div>
         <div className="session-row"><span className="device-icon">▯</span><div><b>Mobile device</b><small>New York, United States • Sample activity</small></div><time>Aug 02, 8:14 PM</time></div>
       </div>
